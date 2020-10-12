@@ -17,8 +17,6 @@ Feedback, bug reports, and comments are not only welcome, but strongly encourage
 AJ
 aj@lkn.io | @ajlkn
 
-Perosnal Website of Ross McIlvaine
-
 PS: Not sure how to get that contact form working? Give formspree.io a try (it's awesome).
 
 
