@@ -1,63 +1,80 @@
 ///
-/// Identity by HTML5 UP
+/// Big Picture by HTML5 UP
 /// html5up.net | @ajlkn
 /// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 ///
 
 /* Button */
 
+	input[type="button"],
 	input[type="submit"],
 	input[type="reset"],
-	input[type="button"],
-	button,
-	.button {
+	.button,
+	button {
 		@include vendor('appearance', 'none');
-		@include vendor('transition', (
-			'background-color #{_duration(transition)} ease-in-out',
-			'border-color #{_duration(transition)} ease-in-out',
-			'color #{_duration(transition)} ease-in-out'
-		));
-		display: inline-block;
-		height: _size(element-height);
-		line-height: _size(element-height);
-		padding: 0 1.5em;
-		background-color: transparent;
-		border-radius: _size(border-radius);
-		border: solid 1px _palette(border);
-		color: _palette(fg) !important;
+		@include vendor('transition', 'background-color #{_duration(transition)} ease-in-out');
+		background-color: _palette(accent1, bg);
+		border: 0;
+		border-radius: 3.5em;
+		color: _palette(accent1, fg);
 		cursor: pointer;
+		display: inline-block;
+		height: 3.5em;
+		line-height: 3.5em;
+		outline: 0;
+		padding: 0 2em 0 2em;
+		position: relative;
 		text-align: center;
 		text-decoration: none;
-		white-space: nowrap;
 
-		&:hover {
-			border-color: _palette(highlight);
-			color: _palette(highlight) !important;
-		}
+		&.down {
+			width: 5em;
+			height: 5em;
+			line-height: 4.5em;
+			padding: 0;
+			background-image: url('images/dark-arrow.svg');
+			background-position: center center;
+			background-repeat: no-repeat;
+			text-indent: -10em;
+			overflow: hidden;
 
-		&.icon {
-			padding-left: 1.35em;
-
-			&:before {
-				margin-right: 0.5em;
+			&.anchored {
+				bottom: 0;
+				border-bottom: 0;
+				border-radius: 3em 3em 0 0;
+				height: 4.5em;
+				margin-left: -2.5em;
 			}
 		}
 
-		&.fit {
-			width: 100%;
+		&.anchored {
+			position: absolute;
+			left: 50%;
 		}
 
-		&.small {
-			font-size: 0.8em;
+		&:hover {
+			background-color: lighten(_palette(accent1, bg), 5);
 		}
 
-		&.large {
-			font-size: 1.35em;
+		&:active {
+			background-color: darken(_palette(accent1, bg), 5);
 		}
 
-		&.disabled,
-		&:disabled {
-			@include vendor('pointer-events', 'none');
-			opacity: 0.5;
+		&.style2 {
+			background-color: transparent;
+			border: solid 2px _palette(border);
+			color: inherit;
+
+			&:hover {
+				background-color: transparentize(_palette(border), 0.75);
+			}
+
+			&:active {
+				background-color: transparentize(_palette(border), 0.625);
+			}
+
+			&.down {
+				background-image: url('images/arrow.svg');
+			}
 		}
 	}
